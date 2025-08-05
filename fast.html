@@ -11,26 +11,12 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8Z0F21NFZ"></script>
     <script src="script.js" defer></script> <!-- Usamos defer para asegurar que se cargue después del DOM -->
+    <script src="load-header.js" defer></script>
 </head>
 
 <body>
     <header class="header">
-        <div class="menu container">
-            <a class="logo" href="index.html">ACIL</a>
-            <input id="menu" type="checkbox" />
-            <label for="menu">
-                <img alt="icono de menú" class="menu-icono" src="Imagenes/menu.png" />
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#servicios-disponibles">Catálogo</a></li>
-                    <li><a href="garantias.html">Garantías</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="mac-lookup.html">MAC Lookup</a></li>
-                </ul>
-            </nav>
-        </div>
+         <div id="header-menu"></div>
 
         <div class="header-content container">
             <div class="header-txt">
@@ -124,21 +110,7 @@
         </div>
     </footer>
 
-    <script>
-        function enviarMensaje(mensaje) {
-            const telefono = '573015228008'; // Tu número de teléfono
-            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
-        }
-
-        function enviarWhatsApp(event) {
-            event.preventDefault();
-            const telefono = '573015228008'; // Tu número de teléfono
-            const mensaje = document.querySelector('[name="tel"]').value;
-            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
-        }
-    </script>
+    
 </body>
 
 </html>

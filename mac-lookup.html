@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAC Lookup</title>
     <link href="style.css" rel="stylesheet" />
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8Z0F21NFZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8Z0F21NFZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-J8Z0F21NFZ');
-</script>
+        gtag('config', 'G-J8Z0F21NFZ');
+    </script>
+    <script src="load-header.js" defer></script>
+
 </head>
+
 
 <body>
     <!-- Cabecera -->
     <header class="header">
-        <div class="menu container"><a class="logo" href="index.html">ACIL</a> <input id="menu" type="checkbox" />
-            <label for="menu"> <img alt="menu" class="menu-icono" src="Imagenes/menu.png" /> </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#servicios-disponibles">Catálogo</a></li>
-                    <li><a href="garantias.html">Garantías</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="mac-lookup.html">MAC Lookup</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div id="header-menu"></div>
+        
 
         <div class="header-content container">
             <div class="header-txt">
@@ -44,14 +38,8 @@
                 <div class="butons"><a class="btn-1" href="javascript:void(0);"
                         onclick="enviarMensaje('Hola, estoy interesado en obtener más información.')">M&aacute;s
                         Informaci&oacute;n</a> <a class="btn-1" href="aplicaciones.html">Aplicaciones</a>
-                    <script>
-                        function enviarMensaje(mensaje) {
-                            const telefono = '573015228008'; // Tu número de teléfono
-                            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-                            window.open(url, '_blank');
-                        }
-                    </script>
                 </div>
+
             </div>
         </div>
     </header>
@@ -63,7 +51,8 @@
 
             <form id="formulario" class="form-container">
                 <label for="macPrefix" class="form-label">Ingresa los primeros 6 dígitos de la MAC:</label>
-                <input type="text" id="macPrefix" name="macPrefix" maxlength="6" placeholder="Ej: FCFBFB" required class="form-input" />
+                <input type="text" id="macPrefix" name="macPrefix" maxlength="6" placeholder="Ej: FCFBFB" required
+                    class="form-input" />
                 <button type="submit" class="btn-3">Buscar Fabricante</button>
             </form>
 
@@ -73,7 +62,7 @@
         </div>
     </main>
 
-  
+
 
     <style>
         .result-container {
@@ -92,6 +81,7 @@
             display: block;
         }
     </style>
+
     <script src="script.js"></script>
 </body>
 

@@ -17,6 +17,7 @@ $apiToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImp0aSI6IjA3MTI5ZDRhLTFlMGEtNDM
 // Obtener prefijo MAC de la URL
 if (isset($_GET['macPrefix'])) {
     $macPrefix = $_GET['macPrefix'];
+    
     $apiUrl = "https://api.macvendors.com/v1/lookup/$macPrefix";
 
     // Llamada a la API usando cURL

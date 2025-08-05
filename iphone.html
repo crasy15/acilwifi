@@ -1,136 +1,144 @@
 <!DOCTYPE html>
 <html data-lt-installed="true" lang="es">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Video Descripci&oacute;n - ACIL</title>
-	<link href="style.css" rel="stylesheet" />
-	<link href="logo.ico" rel="icon" type="image/x-icon" />
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8Z0F21NFZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-J8Z0F21NFZ');
-</script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Descripci&oacute;n - ACIL</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="logo.ico" rel="icon" type="image/x-icon" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8Z0F21NFZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J8Z0F21NFZ');
+
+    </script>
     <script src="script.js" defer></script> <!-- Usamos defer para asegurar que se cargue después del DOM -->
+    <script src="load-header.js" defer></script>
+
 
 </head>
+
 <body>
-<header class="header">
-<div class="menu container"><a class="logo" href="index.html">ACIL</a> <input id="menu" type="checkbox" /> <label for="menu"> <img alt="menu" class="menu-icono" src="Imagenes/menu.png" /> </label>
-<nav class="navbar">
-<ul>
-	<li><a href="index.html">Inicio</a></li>
-    <li><a href="#servicios-disponibles">Catálogo</a></li>
-    <li><a href="garantias.html">Garantías</a></li>
-    <li><a href="blog.html">Blog</a></li>
-</ul>
-</nav>
-</div>
+    <header class="header">
+        <div id="header-menu"></div>
 
-<div class="header-content container">
-<div class="header-txt">
-<h1>Explora Nuestra <span> Oferta</span><br />
-de Servicios</h1>
 
-<p>&iexcl;Obt&eacute;n acceso instant&aacute;neo a servicios y entretenimiento premium! Descubre una amplia selecci&oacute;n de claves WiFi y cuentas de entretenimiento para disfrutar de tus pel&iacute;culas, series y juegos favoritos. Olv&iacute;date de los l&iacute;mites y disfruta de contenido exclusivo sin restricciones. &iexcl;Accede de manera conveniente y asequible a todo lo que deseas!</p>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Explora Nuestra <span> Oferta</span><br />
+                    de Servicios</h1>
 
-<div class="butons"><a class="btn-1" href="javascript:void(0);" onclick="enviarMensaje('Hola, estoy interesado en obtener más información.')">M&aacute;s Informaci&oacute;n</a> <a class="btn-1" href="#">Aplicaciones</a> <script>
-                        function enviarMensaje(mensaje) {
-                            const telefono = '573015228008'; // Tu número de teléfono
-                            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-                            window.open(url, '_blank');
+                <p>&iexcl;Obt&eacute;n acceso instant&aacute;neo a servicios y entretenimiento premium! Descubre una
+                    amplia selecci&oacute;n de claves WiFi y cuentas de entretenimiento para disfrutar de tus
+                    pel&iacute;culas, series y juegos favoritos. Olv&iacute;date de los l&iacute;mites y disfruta de
+                    contenido exclusivo sin restricciones. &iexcl;Accede de manera conveniente y asequible a todo lo que
+                    deseas!</p>
+
+                <div class="butons"><a class="btn-1" href="javascript:void(0);"
+                        onclick="enviarMensaje('Hola, estoy interesado en obtener más información.')">M&aacute;s
+                        Informaci&oacute;n</a> <a class="btn-1" href="#">Aplicaciones</a>
+
+                    <main class="content container" id="video-section">
+                        <h2>Aplicaci&oacute;n para iPhone</h2>
+
+                        <div class="video-content">
+                            <video controls="">
+                                <source src="Imagenes/ip.mp4" type="video/mp4" /> Tu navegador no soporta la
+                                reproducci&oacute;n de
+                                videos.
+                            </video>
+
+                            <h3>&iquest;C&oacute;mo Escanear Redes WiFi en tu iPhone?</h3>
+
+                            <p>Para escanear las redes WiFi disponibles en tu entorno usando tu Apple iPhone, sigue
+                                estos sencillos
+                                pasos con la aplicaci&oacute;n Utilitario AirPort:</p>
+
+                            <h3>Descarga Utilitario AirPort</h3>
+
+                            <p>1- Abre la App Store en tu iPhone.</p>
+
+                            <p>2- Busca Utilitario AirPort y desc&aacute;rgala e inst&aacute;lala.</p>
+
+                            <h3>Configura la Aplicaci&oacute;n</h3>
+
+                            <p>1- Ve a la Configuraci&oacute;n de tu iPhone.</p>
+
+                            <p>2- Despl&aacute;zate hacia abajo hasta encontrar la aplicaci&oacute;n Utilitario AirPort
+                                en la lista de
+                                aplicaciones instaladas.</p>
+
+                            <p>3- Toca la aplicaci&oacute;n para acceder a sus configuraciones.</p>
+
+                            <p>4- Activa la opci&oacute;n Escanear WiFi.</p>
+
+                            <h3>Inicia el Escaneo</h3>
+
+                            <p>1- Abre la aplicaci&oacute;n Utilitario AirPort.</p>
+
+                            <p>2- En la parte superior derecha de la pantalla, encontrar&aacute;s un &iacute;cono de
+                                escaneo. Haz clic
+                                en &eacute;l para comenzar a escanear las redes WiFi disponibles.</p>
+
+                            <h3>Captura y Env&iacute;a</h3>
+
+                            <p>Una vez que el escaneo se haya completado, toma una captura de pantalla de los
+                                resultados.</p>
+                        </div>
+                    </main>
+
+                    <footer class="footer container">
+                        <div class="link"><a class="logo" href="#">ACIL</a></div>
+
+                        <div class="link">
+                            <ul>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="#servicios-disponibles">Cat&aacute;logo</a></li>
+                                <li><a href="Terminos&amp;Condiciones.html">T&eacute;rminos y Condiciones</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="social-icon"><a href="https://www.facebook.com/Accesoilimitad0" target="_blank"><img
+                                    alt="Facebook" src="Imagenes/face.png" /> </a> <a
+                                href="https://www.instagram.com/acceso.col/" target="_blank">
+                                <img alt="Instagram" src="Imagenes/instagram.png" /> </a>
+                            <!-- Agrega más según sea necesario --></div>
+                    </footer>
+                    <style type="text/css">
+                        .content .video-content p {
+                            font-size: 15px;
+                            color: #FFFFFF;
+                            margin-bottom: 18px;
                         }
-                    </script></div>
-</div>
-</div>
-</header>
-<script>
-        function scrollToSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
 
-<main class="content container" id="video-section">
-<h2>Aplicaci&oacute;n para iPhone</h2>
+                        /* Styles for the video to make it responsive */
+                        .video-content video {
+                            max-width: 100%;
+                            height: auto;
+                        }
 
-<div class="video-content">
-<video controls=""><source src="Imagenes/ip.mp4" type="video/mp4" /> Tu navegador no soporta la reproducci&oacute;n de videos.</video>
+                        .content .video-content p {
+                            font-size: 15px;
+                            color: #FFFFFF;
+                            margin-bottom: 18px;
+                        }
 
-<h3>&iquest;C&oacute;mo Escanear Redes WiFi en tu iPhone?</h3>
+                        /* Additional styles for responsiveness */
+                        @media (max-width: 768px) {
+                            .header .header-txt h1 {
+                                font-size: 24px;
+                            }
 
-<p>Para escanear las redes WiFi disponibles en tu entorno usando tu Apple iPhone, sigue estos sencillos pasos con la aplicaci&oacute;n Utilitario AirPort:</p>
-
-<h3>Descarga Utilitario AirPort</h3>
-
-<p>1- Abre la App Store en tu iPhone.</p>
-
-<p>2- Busca Utilitario AirPort y desc&aacute;rgala e inst&aacute;lala.</p>
-
-<h3>Configura la Aplicaci&oacute;n</h3>
-
-<p>1- Ve a la Configuraci&oacute;n de tu iPhone.</p>
-
-<p>2- Despl&aacute;zate hacia abajo hasta encontrar la aplicaci&oacute;n Utilitario AirPort en la lista de aplicaciones instaladas.</p>
-
-<p>3- Toca la aplicaci&oacute;n para acceder a sus configuraciones.</p>
-
-<p>4- Activa la opci&oacute;n Escanear WiFi.</p>
-
-<h3>Inicia el Escaneo</h3>
-
-<p>1- Abre la aplicaci&oacute;n Utilitario AirPort.</p>
-
-<p>2- En la parte superior derecha de la pantalla, encontrar&aacute;s un &iacute;cono de escaneo. Haz clic en &eacute;l para comenzar a escanear las redes WiFi disponibles.</p>
-
-<h3>Captura y Env&iacute;a</h3>
-
-<p>Una vez que el escaneo se haya completado, toma una captura de pantalla de los resultados.</p>
-</div>
-</main>
-
-<footer class="footer container">
-<div class="link"><a class="logo" href="#">ACIL</a></div>
-
-<div class="link">
-<ul>
-	<li><a href="index.html">Inicio</a></li>
-	<li><a href="#servicios-disponibles">Cat&aacute;logo</a></li>
-	<li><a href="Terminos&amp;Condiciones.html">T&eacute;rminos y Condiciones</a></li>
-</ul>
-</div>
-
-<div class="social-icon"><a href="https://www.facebook.com/Accesoilimitad0" target="_blank"><img alt="Facebook" src="Imagenes/face.png" /> </a> <a href="https://www.instagram.com/acceso.col/" target="_blank"> <img alt="Instagram" src="Imagenes/instagram.png" /> </a> <!-- Agrega más según sea necesario --></div>
-</footer>
-<style type="text/css">.content .video-content p {
-        font-size: 15px;
-        color: #FFFFFF;
-        margin-bottom: 18px;
-    }
-     /* Styles for the video to make it responsive */
-     .video-content video {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .content .video-content p {
-            font-size: 15px;
-            color: #FFFFFF;
-            margin-bottom: 18px;
-        }
-
-        /* Additional styles for responsiveness */
-        @media (max-width: 768px) {
-            .header .header-txt h1 {
-                font-size: 24px;
-            }
-
-            .header .header-txt p {
-                font-size: 14px;
-            }
-        }
-</style>
+                            .header .header-txt p {
+                                font-size: 14px;
+                            }
+                        }
+                    </style>
 </body>
+
 </html>

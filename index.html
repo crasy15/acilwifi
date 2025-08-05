@@ -19,6 +19,7 @@
   gtag('config', 'G-J8Z0F21NFZ');
 </script>
     <script src="script.js" defer></script> <!-- Usamos defer para asegurar que se cargue después del DOM -->
+     <script src="load-header.js" defer></script>
     
     <script>
     !function(f,b,e,v,n,t,s)
@@ -43,20 +44,8 @@
 
 <body>
     <header class="header">
-        <div class="menu container"><a class="logo" href="index.html">ACIL</a> <input id="menu" type="checkbox" />
-            <label for="menu"> <img alt="menu" class="menu-icono" src="Imagenes/menu.png" /> </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#servicios-disponibles">Catálogo</a></li>
-                    <li><a href="garantias.html">Garantías</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="mac-lookup.html">MAC Lookup</a></li>
-                    <li><a href="fast.html">Test de Velocidad</a></li>
+                <div id="header-menu"></div>
 
-                </ul>
-            </nav>
-        </div>
 
         <div class="header-content container">
             <div class="header-txt">
@@ -72,14 +61,8 @@
                 <div class="butons"><a class="btn-1" href="javascript:void(0);"
                         onclick="enviarMensaje('Hola, estoy interesado en obtener más información.')">M&aacute;s
                         Informaci&oacute;n</a> <a class="btn-1" href="aplicaciones.html">Aplicaciones</a>
-                    <script>
-                        function enviarMensaje(mensaje) {
-                            const telefono = '573015228008'; // Tu número de teléfono
-                            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-                            window.open(url, '_blank');
-                        }
-                    </script>
-                </div>
+                                                        </div>
+
             </div>
         </div>
     </header>
