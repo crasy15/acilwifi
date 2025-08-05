@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html data-lt-installed="true" lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>aplicaciones</title>
+	<link href="logo.ico" rel="icon" type="image/x-icon" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8Z0F21NFZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J8Z0F21NFZ');
+</script>
+
+</head>
+<body>
+<header class="header">
+<div class="menu container"><a class="logo" href="index.html">ACIL</a> <input id="menu" type="checkbox" /> <label for="menu"> <img alt="menu" class="menu-icono" src="Imagenes/menu.png" /> </label>
+<nav class="navbar">
+<ul>
+	<li><a href="index.html">Inicio</a></li>
+    <li><a href="#servicios-disponibles">Catálogo</a></li>
+    <li><a href="garantias.html">Garantías</a></li>
+    <li><a href="blog.html">Blog</a></li>
+</ul>
+</nav>
+</div>
+
+<div class="header-content container">
+<div class="header-txt">
+<h1>Explora Nuestra <span> Oferta</span><br />
+de Servicios</h1>
+
+<p>&iexcl;Obt&eacute;n acceso instant&aacute;neo a servicios y entretenimiento premium! Descubre una amplia selecci&oacute;n de claves WiFi y cuentas de entretenimiento para disfrutar de tus pel&iacute;culas, series y juegos favoritos. Olv&iacute;date de los l&iacute;mites y disfruta de contenido exclusivo sin restricciones. &iexcl;Accede de manera conveniente y asequible a todo lo que deseas!</p>
+
+<div class="butons"><a class="btn-1" href="javascript:void(0);" onclick="enviarMensaje('Hola, estoy interesado en obtener más información.')">M&aacute;s Informaci&oacute;n</a> <a class="btn-1" href="#">Aplicaciones</a> <script>
+                        function enviarMensaje(mensaje) {
+                            const telefono = '573015228008'; // Tu número de teléfono
+                            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+                            window.open(url, '_blank');
+                        }
+                    </script></div>
+</div>
+</div>
+</header>
+
+<main class="product container">
+<h2>Aplicaciones</h2>
+
+<div class="product-content">
+<div class="Product-1"><img class="app-logo" src="Imagenes/unnamed (1).png" />
+<div class="Product-txt">
+<h3>WiFi Analyzer (open-source)</h3>
+<a class="btn-2" href="https://play.google.com/store/apps/details?id=com.vrem.wifianalyzer&amp;hl=es&amp;gl=US" target="_blank">Descargar</a></div>
+</div>
+<!-- Agrega más aplicaciones según sea necesario --></div>
+
+<div class="product-content">
+<div class="Product-1"><img class="app-logo" src="Imagenes/utilitario.png" />
+<div class="Product-txt">
+<h3>Utilitario AirPort</h3>
+<a class="btn-2" href="https://apps.apple.com/co/app/utilitario-airport/id427276530" target="_blank">Descargar</a></div>
+</div>
+<!-- Agrega más aplicaciones según sea necesario --></div>
+</main>
+
+<section class="contact container">
+<div class="contact-content">
+<h3>Escribenos a nuestro Whatsapp</h3>
+
+<form id="whatsappForm" onsubmit="enviarWhatsApp(event)"><input name="tel" placeholder="Escríbenos" type="tel" /> <input class="btn-3" type="submit" value="Enviar" /></form>
+<script>
+                function enviarWhatsApp(event) {
+                    event.preventDefault();
+                    // Obtener el número de teléfono y el mensaje desde el formulario
+                    const telefono = '573015228008'; // Tu número de teléfono
+                    const mensaje = document.querySelector('[name="tel"]').value;
+                    // Formar la URL de WhatsApp con el número y el mensaje
+                    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+                    // Abrir una nueva ventana/tab con el enlace de WhatsApp
+                    window.open(url, '_blank');
+                }
+            </script></div>
+</section>
+
+<footer class="footer container">
+<div class="link"><a class="logo" href="index.html">ACIL</a></div>
+
+<div class="link">
+<ul>
+	<li><a href="index.html">Inicio</a></li>
+	<li><a href="index.html#servicios-disponibles">Cat&aacute;logo</a></li>
+	<!--  <li><a href="#">Productos</a></li> -->
+</ul>
+</div>
+
+<div class="social-icon"><a href="https://www.facebook.com/Accesoilimitad0" target="_blank"><img alt="Facebook" src="Imagenes/face.png" /> </a> <a href="https://www.instagram.com/acceso.col/" target="_blank"> <img alt="Instagram" src="Imagenes/instagram.png" /> </a> <!-- Agrega más según sea necesario --></div>
+</footer>
+<style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+body  {
+    font-family: "Poppins", sans-serif;
+    background-color: #1b1726;
+
+}
+img {
+    max-width: 100%;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    background-image: url(Imagenes/portada.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 80px 0;
+}
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: aliceblue;
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #ffff;
+    font-weight: 600;
+    display: block;
+}
+.menu .navbar ul li a:hover {
+    color: #FF5A2C;
+}
+#menu {
+    display: none;
+}
+.menu-icono {
+    width: 25px;
+}
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+.header-content {
+    display: flex;
+}
+.header-txt {
+    flex-basis: 50%;
+}
+.header-txt h1 {
+    font-size: 60px;
+    color: #FFFFFF;
+    line-height: 1.3;
+    margin-bottom: 25px;
+
+}
+.header-txt span {
+    color: #FF5A2C;
+}
+.header-txt p {
+    font-size: 17px;
+    color: #e0e0e0;
+    margin-bottom: 45px;
+}
+.butons {
+    display: flex;
+
+}
+.btn-1, .btn-2, .btn-3 {
+    display: inline-block;
+    padding: 11px 35px;
+    border: 2px solid #FF5A2C;
+    border-radius: 25px;
+    margin-right: 25px;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+
+.btn-1:hover {
+    background-color: #FF5A2C;
+}
+.popular {
+    padding: 100px 0;
+    text-align: center;
+}
+h2 {
+    color: #FFFFFF;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+.popular-content {
+    display: flex;
+    justify-content: space-between;
+}
+.popular-content img {
+    width: 150px;
+}
+
+.product-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+.product-1 {
+    background-color: #2A223A;
+}
+.product-txt {
+    padding: 50px 30px;
+}
+h3 {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price p {
+    font-size: 17px;
+    color: #FF5A2C;
+}
+.btn-2 {
+    padding: 5px 25px;
+    background-color: #FF5A2C;
+    margin: right 0;
+}
+.contact {
+    padding: 150px 300px;
+}
+.contact-content {
+    background-color: #2A223A;
+    text-align: center;
+    padding: 50px;
+    border-radius: 50px;
+}
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+input {
+    padding: 18px 25px;
+    background-color: #3f3456;
+    border: 0;
+    border-radius: 25px;
+    outline: none;
+    margin-right: 10px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+::placeholder {
+    color: #e0e0e0;
+    font-size: 17px;
+}
+.btn-3 {
+    background-color: #FF5A2C;
+    cursor: pointer;
+    margin-right: 0;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.link ul {
+    display: flex;
+}
+.link ul li > a {
+    font-size: 17px;
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+.link ul li > a:hover {
+color: #FF5A2C;
+}
+.social-icon img {
+    width: 30px; /* Ajusta el ancho según tu preferencia */
+    height: 30px; /* Ajusta la altura según tu preferencia */
+    margin-right: 10px; /* Ajusta el margen derecho según tu preferencia */
+}
+@media(max-width:991px) {
+    .menu {
+        padding: 20px;
+
+    }
+    .menu label {
+        display: initial;
+    }
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #FF5A2C;
+        display: none;
+    }
+    .menu .navbar ul li a:hover {
+        color: #1b1726;
+    }
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+    .header {
+        min-height: 0vh;
+        padding: 80px 30px 50px 30px;
+    }
+    .header-txt {
+        text-align: center;
+        flex-basis: 100%;
+    }
+    .header-txt h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+    .butons {
+        justify-content: center;
+    }
+    .btn-1:last-of-type {
+        margin-right: 0;
+    }
+
+    .popular {
+        display: none;
+    }
+    .product {
+        padding: 30px;
+    }
+    .product-content {
+        grid-template-columns: repeat(1,1fr);
+        gap: 30px;
+    }
+    .product-1 img {
+        width: 100%;
+    }
+
+    .contact {
+        padding: 30px;
+    }
+    form {
+        flex-direction: column;
+    }
+    input {
+        margin: 0 0 20px 0;
+    }
+    .footer {
+        flex-direction:  column;
+        text-align: center;
+    }
+    .link ul {
+        margin-top: 20px;
+        
+    }
+
+}
+</style>
+</body>
+</html>

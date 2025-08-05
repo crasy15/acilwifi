@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACIL</title>
+    <meta name="description" content="¡Obtén acceso instantáneo a servicios y entretenimiento premium! Descubre una amplia selección de claves WiFi en Colombia y cuentas de entretenimiento para disfrutar de tus películas, series y juegos favoritos.">
+    <link href="style.css" rel="stylesheet" />
+    <link href="logo.ico" rel="icon" type="image/x-icon" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8Z0F21NFZ"></script>
+    <script src="script.js" defer></script> <!-- Usamos defer para asegurar que se cargue después del DOM -->
+</head>
+
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a class="logo" href="index.html">ACIL</a>
+            <input id="menu" type="checkbox" />
+            <label for="menu">
+                <img alt="icono de menú" class="menu-icono" src="Imagenes/menu.png" />
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#servicios-disponibles">Catálogo</a></li>
+                    <li><a href="garantias.html">Garantías</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="mac-lookup.html">MAC Lookup</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Explora Nuestra <span>Oferta</span><br />de Servicios</h1>
+                <p>¡Obtén acceso instantáneo a servicios y entretenimiento premium! Descubre una amplia selección de claves WiFi y cuentas de entretenimiento para disfrutar de tus películas, series y juegos favoritos. ¡Accede de manera conveniente y asequible a todo lo que deseas!</p>
+                <div class="butons">
+                    <a class="btn-1" href="javascript:void(0);" onclick="enviarMensaje('Hola, estoy interesado en obtener más información.')">Más Información</a>
+                    <a class="btn-1" href="aplicaciones.html">Aplicaciones</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="popular container">
+        <h2>Preferidos por Nuestros Clientes</h2>
+        <div class="carousel">
+            <div class="carousel-content">
+                <img src="Imagenes/Clave plus .png" alt="Clave plus" />
+                <img src="Imagenes/sg.jpg" alt="SG" />
+                <img src="Imagenes/px.jpg" alt="PX" />
+                <img src="Imagenes/pri.png" alt="PRI" />
+                <img src="Imagenes/hbo.png" alt="HBO" />
+                <img src="Imagenes/nt.jpg" alt="NT" />
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-content {
+            display: flex;
+            animation: scroll 50s linear infinite;
+        }
+
+        .carousel img {
+            width: 200px;
+            margin: 0 10px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-200px * 6));
+            }
+        }
+    </style>
+
+    <section id="speed-test" class="speed-test">
+        <div class="container">
+            <h1>Medir Velocidad de Internet</h1>
+            <p>Usa nuestra herramienta recomendada para medir la velocidad de tu conexión:</p>
+            <iframe src="https://fast.com" width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+    </section>
+
+    <section class="contact container">
+        <div class="contact-content">
+            <h3>Escríbenos a nuestro WhatsApp</h3>
+            <form id="whatsappForm" onsubmit="enviarWhatsApp(event)">
+                <input name="tel" placeholder="Escríbenos" type="tel" />
+                <input class="btn-3" type="submit" value="Enviar" />
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer container">
+        <div class="link">
+            <a class="logo" href="#">ACIL</a>
+        </div>
+
+        <div class="link">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#servicios-disponibles">Catálogo</a></li>
+                <li><a href="Terminos&Condiciones.html">Términos y Condiciones</a></li>
+            </ul>
+        </div>
+
+        <div class="social-icon">
+            <a href="https://www.facebook.com/Accesoilimitad0" target="_blank"><img alt="Facebook" src="Imagenes/face.png" /></a>
+            <a href="https://www.instagram.com/acceso.col/" target="_blank"><img alt="Instagram" src="Imagenes/instagram.png" /></a>
+        </div>
+    </footer>
+
+    <script>
+        function enviarMensaje(mensaje) {
+            const telefono = '573015228008'; // Tu número de teléfono
+            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            const telefono = '573015228008'; // Tu número de teléfono
+            const mensaje = document.querySelector('[name="tel"]').value;
+            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
