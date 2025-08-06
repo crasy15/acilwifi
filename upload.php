@@ -1,7 +1,7 @@
 <?php
 // Configuración del token esperado y del directorio de carga
 $expectedToken = 'REPLACE_WITH_YOUR_TOKEN';
-$uploadDir = __DIR__ . '/Imagenes/';
+$uploadDir = __DIR__ . '/galeria/';
 $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 $maxFileSize = 2 * 1024 * 1024; // 2 MB
 
