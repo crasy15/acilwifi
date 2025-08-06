@@ -79,7 +79,23 @@ function enviarMensaje(mensaje) {
     window.open(url, '_blank');
 }
 
+function registrarEventoCompra(nombreProducto) {
+    
+    if (typeof gtag === 'function') {
+        gtag('event', 'CompraIntentada', {
+            event_category: 'ecommerce',
+            event_label: nombreProducto
+        });
+    }
+    if (typeof fbq === 'function') {
+        fbq('trackCustom', 'CompraIntentada', {
+            producto: nombreProducto
+        });
+    }
+}
+
 function comprarProducto(nombreProducto) {
+    registrarEventoCompra(nombreProducto);
     const mensaje = `¡Hola! Estoy interesado en comprar el producto "${nombreProducto}". ¿Puedes proporcionarme más detalles?`;
      const url = `https://wa.me/${TELEFONO_CONTACTO}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
