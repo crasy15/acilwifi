@@ -1,9 +1,13 @@
 // Contenido de script.js
+const DEBUG = false;
+const TELEFONO_CONTACTO = '573015228008'; // Tu número de teléfono
 document.addEventListener('DOMContentLoaded', function () {
     async function buscarFabricante(event) {
         event.preventDefault(); // Evita el comportamiento predeterminado del formulario
         const macPrefix = document.getElementById('macPrefix').value.trim(); // Remueve espacios en blanco
-        console.log("Buscando fabricante para el prefijo MAC:", macPrefix);
+        if (DEBUG) {
+            console.log("Buscando fabricante para el prefijo MAC:", macPrefix);
+        }
 
         // Mapeo de fabricantes a operadores
         const operadores = {
@@ -35,8 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error('Error al conectar con la API');
             }
 
-            const data = await response.json(); // Correctamente nombrada como "data"
-            console.log('Datos de la API:', data);
+           const data = await response.json(); // Correctamente nombrada como "data"
+              if (DEBUG) {
+                  console.log('Datos de la API:', data);
+              }
 
             if (data && data.data) {
                 const fabricante = data.data.organization_name || 'No encontrado';
@@ -69,15 +75,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function enviarMensaje(mensaje) {
-    const telefono = '573015228008'; // Tu número de teléfono
-    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://wa.me/${TELEFONO_CONTACTO}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 }
 
 function comprarProducto(nombreProducto) {
-    const telefono = '573015228008'; // Tu número de teléfono
     const mensaje = `¡Hola! Estoy interesado en comprar el producto "${nombreProducto}". ¿Puedes proporcionarme más detalles?`;
-    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+     const url = `https://wa.me/${TELEFONO_CONTACTO}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 }
 
@@ -96,9 +100,8 @@ function toggleDescription(btn) {
 
 function enviarWhatsApp(event) {
     event.preventDefault();
-    const telefono = '573015228008'; // Tu número de teléfono
     const mensaje = document.querySelector('[name="tel"]').value;
-    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://wa.me/${TELEFONO_CONTACTO}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 }
 
