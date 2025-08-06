@@ -393,6 +393,54 @@ color: #FF5A2C;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.impact-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.impact-stats .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.impact-stats .stat-icon {
+    font-size: 48px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.impact-stats .stat-item h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.impact-stats .stat-item p {
+    font-size: 18px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .impact-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .impact-stats .stat-item h3 {
+        font-size: 28px;
+    }
+
+    .impact-stats .stat-item p {
+        font-size: 16px;
+    }
+}
+
 
 
 
