@@ -1,6 +1,11 @@
 <?php
 // Configuración del token esperado y del directorio de carga
-$expectedToken = 'REPLACE_WITH_YOUR_TOKEN';
+$expectedToken = getenv('UPLOAD_TOKEN');
+if ($expectedToken === false) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Token no configurado']);
+    exit;
+}
 $uploadDir = __DIR__ . '/galeria/';
 $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 $maxFileSize = 2 * 1024 * 1024; // 2 MB
@@ -52,6 +57,22 @@ if (!in_array($mimeType, $allowedMimeTypes)) {
     exit;
 }
 
+// Verificar directorio de carga
+if (!is_dir($uploadDir)) {
+    if (!mkdir($uploadDir, 0755, true)) {
+        http_response_code(500);
+        echo json_encode(['error' => 'No se pudo crear el directorio de carga']);
+        exit;
+    }
+}
+
+if (!is_writable($uploadDir)) {
+    http_response_code(500);
+    echo json_encode(['error' => 'El directorio de carga no es escribible']);
+    exit;
+}
+
+
 // Normalizar nombre del archivo
 $filename = basename($file['name']);
 $filename = preg_replace('/[^A-Za-z0-9_\.\-]/', '_', $filename);
@@ -73,5 +94,5 @@ if (!move_uploaded_file($file['tmp_name'], $destination)) {
 
 // Éxito
 http_response_code(200);
-$publicPath = 'Imagenes/' . basename($destination);
+$publicPath = 'galeria/' . basename($destination);
 echo json_encode(['mensaje' => 'Archivo subido correctamente', 'archivo' => $publicPath]);
