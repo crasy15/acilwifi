@@ -1,7 +1,27 @@
 // Contenido de script.js
 const DEBUG = false;
 const TELEFONO_CONTACTO = '573015228008'; // Tu número de teléfono
+
+function guardarHistorial(macPrefix, fabricante, operador) {
+    const historial = JSON.parse(localStorage.getItem('historialBusquedas')) || [];
+    historial.push({ macPrefix, fabricante, operador });
+    localStorage.setItem('historialBusquedas', JSON.stringify(historial));
+}
+
+function mostrarHistorial() {
+    const historial = JSON.parse(localStorage.getItem('historialBusquedas')) || [];
+    const contenedor = document.getElementById('historial');
+    if (!contenedor) return;
+    contenedor.innerHTML = '';
+    historial.forEach(item => {
+        const p = document.createElement('p');
+        p.textContent = `${item.macPrefix} - ${item.fabricante} - ${item.operador}`;
+        contenedor.appendChild(p);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+    mostrarHistorial();
     async function buscarFabricante(event) {
         event.preventDefault(); // Evita el comportamiento predeterminado del formulario
         const macPrefix = document.getElementById('macPrefix').value.trim(); // Remueve espacios en blanco
@@ -39,16 +59,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error('Error al conectar con la API');
             }
 
-           const data = await response.json(); // Correctamente nombrada como "data"
-              if (DEBUG) {
-                  console.log('Datos de la API:', data);
-              }
+            const data = await response.json(); // Correctamente nombrada como "data"
+            if (DEBUG) {
+                console.log('Datos de la API:', data);
+            }
+
+            let fabricante = 'No encontrado';
+            let operador = 'Operador desconocido';
+
 
             if (data && data.data) {
-                const fabricante = data.data.organization_name || 'No encontrado';
+                fabricante = data.data.organization_name || 'No encontrado';
 
                 // Buscar operador asociado al fabricante
-                const operador = Object.keys(operadores).find(key => fabricante.toLowerCase().includes(key.toLowerCase())) 
+                operador = Object.keys(operadores).find(key => fabricante.toLowerCase().includes(key.toLowerCase()))
                     ? operadores[Object.keys(operadores).find(key => fabricante.toLowerCase().includes(key.toLowerCase()))]
                     : 'Operador desconocido';
 
@@ -56,6 +80,10 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 document.getElementById('resultado').textContent = 'Fabricante no encontrado';
             }
+            
+            guardarHistorial(macPrefix, fabricante, operador);
+            mostrarHistorial();
+
         } catch (error) {
             console.error('Error en la solicitud:', error);
             alert('Hubo un problema al realizar la solicitud.');
@@ -80,7 +108,7 @@ function enviarMensaje(mensaje) {
 }
 
 function registrarEventoCompra(nombreProducto) {
-    
+
     if (typeof gtag === 'function') {
         gtag('event', 'CompraIntentada', {
             event_category: 'ecommerce',
@@ -97,14 +125,14 @@ function registrarEventoCompra(nombreProducto) {
 function comprarProducto(nombreProducto) {
     registrarEventoCompra(nombreProducto);
     const mensaje = `¡Hola! Estoy interesado en comprar el producto "${nombreProducto}". ¿Puedes proporcionarme más detalles?`;
-     const url = `https://wa.me/${TELEFONO_CONTACTO}?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://wa.me/${TELEFONO_CONTACTO}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 }
 
 function toggleDescription(btn) {
     const productContainer = btn.closest('.Product-1');
     const description = productContainer.querySelector('.description');
-    
+
     if (description.style.display === 'none' || description.style.display === '') {
         description.style.display = 'block';
         btn.innerText = 'Ocultar Descripción';
