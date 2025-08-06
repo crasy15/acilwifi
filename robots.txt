@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /aplicaciones.html
+Allow: /fast.html
+Allow: /garantias.html
+Allow: /iphone.html
+Allow: /mac-lookup.html
+Allow: /Terminos&Condiciones.html
+
+Sitemap: https://acilwifi.com.co/sitemap.xml
