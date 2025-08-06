@@ -13,6 +13,14 @@ if (is_dir($dir)) {
         }
     }
 }
+
+if (isset($_GET['ajax'])) {
+    header('Content-Type: application/json');
+    $paths = array_map(fn($img) => 'galeria/' . $img, $imagenes);
+    echo json_encode($paths);
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -38,5 +46,34 @@ if (is_dir($dir)) {
             <p>No se encontraron imágenes en la galería.</p>
         <?php endif; ?>
     </div>
+      <script>
+        async function refrescarGaleria() {
+            try {
+                const respuesta = await fetch('galeria.php?ajax=1', { cache: 'no-cache' });
+                if (!respuesta.ok) {
+                    throw new Error('Error al cargar la galería');
+                }
+                const imagenes = await respuesta.json();
+                const contenedor = document.querySelector('.galeria');
+                if (!contenedor) return;
+                contenedor.innerHTML = '';
+                if (imagenes.length === 0) {
+                    contenedor.innerHTML = '<p>No se encontraron imágenes en la galería.</p>';
+                    return;
+                }
+                imagenes.forEach(src => {
+                    const figure = document.createElement('figure');
+                    const img = document.createElement('img');
+                    img.src = src;
+                    figure.appendChild(img);
+                    contenedor.appendChild(figure);
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', refrescarGaleria);
+        document.addEventListener('galeria-actualizada', refrescarGaleria);
+    </script>
 </body>
 </html>
